@@ -1,0 +1,156 @@
+:root {
+    --primary-color: #00bcd4;
+    --accent-color: #f50057;
+
+    --text-color: #263238;
+    --body-color: #80deea;
+    --main-font: 'roboto';
+    --font-bold: 700;
+    --font-regular: 400;
+}
+* { box-sizing: border-box }
+
+body {
+    color: var(--text-color);
+    background-color: var(--body-color);
+    font-family: var(--main-font), Arial;
+    font-weight: var(--font-regular);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+h1 { font-weight: var(--font-bold) }
+input,
+button {
+    border: none;
+    background: none;
+    outline: 0;
+}
+button {cursor: pointer}
+.SearchBox-input::placeholder {/* No es un seudoelemento estandar */
+    color:white;
+    opacity: .6;
+}
+/* Chrome, Opera ySafari */
+.SearchBox-input::-webkit-input-placeholder {
+    color: white;
+}
+/* Firefox 19+ */
+.SearchBox-input::-moz-placeholder {
+    color: white;
+}
+/* IE 10+ y Edge */
+.SearchBox-input:-ms-input-placeholder {
+    color: white;
+}
+/* Firefox 18- */
+#formGroupExampleInput:-moz-placeholder {
+    color: white;
+}
+
+
+
+.SearchBox {
+    --height: 4em;
+    display: flex;
+    padding-left: 2em;
+    padding-right: 1em;
+    border-radius: var(--height);
+    background-color: var(--primary-color);
+    height: var(--height);
+}
+
+.SearchBox-input {
+    width: 500px;
+    font-size: 1.2em;
+    color: #fff;
+    transition: .45s;
+}
+.SearchBox-button {
+    display: flex;
+    border-radius: 50%;
+    width: var(--height);
+    height: var(--height);
+    background-color: var(--accent-color);
+    transition: .3s;
+    transform: scale(.85);
+}
+
+.SearchBox-icon {
+    margin: auto;
+    color: #fff;
+}
+
+
+@media screen and (min-width: 400px){
+    .SearchBox:hover .SearchBox-input {
+        width: 500px;
+    }
+}
+
+.image-list {
+    width: 30px;
+    height: 30px;
+}
+
+.fade-enter{
+    opacity: 0;
+}
+
+.fade-enter-active{
+    transition: all ease 1s;
+
+}
+
+.fade-leave{
+
+}
+
+.fade-leave-active{
+    transition: all ease 1s;
+    opacity: 0;
+}
+
+
+.slide-enter{
+    opacity: 0;
+}
+
+.slide-enter-active{
+    animation: slide-in 2s ease-in-out;
+    transition: all ease 1s;
+}
+
+.slide-leave{
+
+}
+
+.slide-leave-active{
+    animation: slide-out 1s ease;
+    transition: all ease 0.5s;
+    opacity: 0;
+}
+
+@keyframes slide-in {
+    from{
+        transform: translateY(40px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(40px);
+    }
+}
+
